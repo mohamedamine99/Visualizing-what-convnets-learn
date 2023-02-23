@@ -1,0 +1,86 @@
+|   tree.txt
+|   
++---activations
+|   +---cat
+|   |       01 conv2d_3.png
+|   |       02 batch_normalization_4.png
+|   |       03 max_pooling2d_3.png
+|   |       04 dropout_4.png
+|   |       05 conv2d_4.png
+|   |       06 batch_normalization_5.png
+|   |       ....
+|   |       
+|   +---dog
+|   |       01 conv2d_3.png
+|   |       02 batch_normalization_4.png
+|   |       03 max_pooling2d_3.png
+|   |       04 dropout_4.png
+|   |       05 conv2d_4.png
+|   |       06 batch_normalization_5.png
+|   |       .....
+|   |       
+|   +---two_cats
+|   |       01 conv2d_3.png
+|   |       02 batch_normalization_4.png
+|   |       03 max_pooling2d_3.png
+|   |       04 dropout_4.png
+|   |       05 conv2d_4.png
+|   |       ....
+|   |       
+|   \---two_dogs
+|           01 conv2d_3.png
+|           02 batch_normalization_4.png
+|           03 max_pooling2d_3.png
+|           04 dropout_4.png
+|           05 conv2d_4.png
+|           06 batch_normalization_5.png
+|           ....
+|           
++---activations GIFs
+|       cat activations 2.gif
+|       cat activations.gif
+|       dog activations 2.gif
+|       dog activations.gif
+|       two cats activations 2.gif
+|       two cats activations.gif
+|       two dogs activations 2.gif
+|       two dogs activations.gif
+|       
+\---activations_2
+    +---cat
+    |       00--000.png
+    |       00--001.png
+    |       00--002.png
+    |       00--003.png
+    |       00--004.png  
+    |       ....
+
+
+    |       
+    +---dog
+    |       00--000.png
+    |       00--001.png
+    |       00--002.png
+    |       00--003.png
+    |       00--004.png
+    |       ....
+
+    |       
+    +---two_cats
+    |       00--000.png
+    |       00--001.png
+    |       00--002.png
+    |       00--003.png
+    |       00--004.png
+    |       ....
+
+    |       
+    \---two_dogs
+            00--000.png
+            00--001.png
+            00--002.png
+            00--003.png
+            00--004.png
+            ....
+ 
+            
