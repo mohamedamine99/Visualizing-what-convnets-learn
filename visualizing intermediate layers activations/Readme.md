@@ -24,12 +24,12 @@ Visualizing intermediate activations consists of displaying the feature maps tha
 
   - [activations GIFs](https://github.com/mohamedamine99/Visualizing-what-convnets-learn/tree/main/visualizing%20intermediate%20layers%20activations/results/activations%20GIFs) : contains all the animations of activations of the different layers in the model for each of the 4 test images in separate folders.
  
-### Full Activations displayed as a grid
+### Full activations channels displayed as a grid
 <p align="center">
   <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations%20GIFs/cat%20activations.gif" width=500>
 </p>
 
-### Conv layers activations displayed individually 
+### Conv layers activations channels displayed individually 
 
 <div align="center">  
 <table style="margin: 0 auto; border-style: none; width:100%">
@@ -47,6 +47,34 @@ Visualizing intermediate activations consists of displaying the feature maps tha
   </tr>
 </table>
 </div>
+
+### Interpreting results:
+
+* The first layer, with filters of size (3x3) applied on an image of size (128x128) acts as a collection of various edge detectors. Therefore, the activations retain almost all of the information present in the initial picture.
+<p align="center">
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/cat.PNG" width=150>
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/00--001.png" width=150>
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/00--025.png" width=150>
+ <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/dog.PNG" width=150>
+  <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/dog/00--001.png" width=150>
+   <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/dog/00--025.png" width=150>
+</p>
+
+* The higher we go, the more the activations become abstract and less visually interpretable. They begin to encode higher-level concepts such as “cat ear” and
+“cat eye.” Higher presentations carry increasingly less information about the visual contents of the image, and increasingly more information related to the
+class of the image.
+
+<p align="center">
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/cat.PNG" width=150>
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/00--001.png" width=150>
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/05--025.png" width=150>
+
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/09--012.png" width=150>
+
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/09--025.png" width=150>
+
+<img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/13--050.png" width=150>
+</p>
 
 
 
