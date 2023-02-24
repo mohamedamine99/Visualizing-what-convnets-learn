@@ -76,5 +76,14 @@ class of the image.
 <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/results/activations_2/cat/13--050.png" width=150>
 </p>
 
+## How it works :
+
+In order to extract the activation of the different layers of the model we need to create a Keras model that takes batches of images as input, and outputs the activations of all convolution and pooling layers. To do this, we would need to recreate our CNN classification model into a new modified version that has the same input but multiple outputs. the new model's outputs are the outputs of the different layers of the original model. we’ll use the Keras class `Model`. A model is instantiated using two arguments: an input tensor (or list of input tensors) and an output tensor(or list of output tensors).The new model (named `activations_model` in the code) mapping the specified inputs (img tensor or list of multiple tensors) to the specified outputs.
+
+<p align="center">
+  <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/Readme%20imgs/original%20model.png" width=800>
+  <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/visualizing%20intermediate%20layers%20activations/Readme%20imgs/activations%20model.png" width=800>
+
+</p>
 
 
