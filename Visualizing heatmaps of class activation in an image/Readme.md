@@ -6,6 +6,8 @@
 <p align="center">
   <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/cat.PNG" width=200>
   <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/cat_heatmap_overlayed.png" width=200>
+  <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20dog%20video.gif" width=125>
+    <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/dog_1_heatmap.gif" width=125>
 
 </p>
 
