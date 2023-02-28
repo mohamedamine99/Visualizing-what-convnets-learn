@@ -10,6 +10,19 @@
     <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/dog_1_heatmap.gif" width=125>
 
 </p>
+Heatmaps are a powerful tool for understanding how a machine learning model makes decisions. In particular, heatmaps of class activation can help us understand which parts of an image the model is using to classify it. One popular method for generating these heatmaps is GradCAM, which stands for Gradient-weighted Class Activation Mapping. With GradCAM, we can generate a heatmap that highlights the regions of an image that are most important for a particular class.
+
+By visualizing these heatmaps, we can gain insight into how our machine learning model is making decisions, which can help us improve our models and build better AI systems.
+
+## Overview 
+
+- `GradCAM_demo_1.ipynb` : This [file](https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/GradCAM_demo_1.ipynb) contains code or a simple implementation of the GradCAM algorithm on a single image. The resulting heatmap is then processed and overlaid onto the original image to highlight the parts of the image that the CNN Sequential model is using to make its prediction.
+
+- `Gradcam.ipynb` : This [file](https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/Gradcam.ipynb) has code that builds upon the previous `GradCAM_demo_1.ipynb` implementation, adding new functionalities and improvements such as video heatmap overlay and gif creations. In this file we computed the heatmaps for both pre-trained CNN sequential binary classification model and a multi-class (1000) MobilenetV2 model with imagenet weights.
+
+
+- `gradcam_funcs.py` : This [file](https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/gradcam_funcs.py) contains all the functions used in `Gradcam.ipynb` with these functions well documented in the numpy style.
+
 
 **What is GradCAM** ?
 - Grad-CAM (Gradient-weighted Class Activation Mapping) is a popular technique for visualizing the regions of an image that are important for a neural network's prediction.
