@@ -21,7 +21,7 @@ By visualizing these heatmaps, we can gain insight into how our machine learning
 - `Gradcam.ipynb` : This [file](https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/Gradcam.ipynb) has code that builds upon the previous `GradCAM_demo_1.ipynb` implementation, adding new functionalities and improvements such as video heatmap overlay and gif creations. In this file we computed the heatmaps for both pre-trained CNN sequential binary classification model and a multi-class (1000) MobilenetV2 model with imagenet weights.
 
 
-- `gradcam_funcs.py` : This [file](https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/gradcam_funcs.py) contains all the functions used in `Gradcam.ipynb` with these functions well documented in the numpy style.
+- `gradcam_funcs.py` : This [file](https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/gradcam_funcs.py)  encompasses all functions utilized in `Gradcam.ipynb`, with detailed Numpy style documentation for each function.
 
 
 **What is GradCAM** ?
@@ -39,7 +39,94 @@ This weighted sum is then passed through a ReLU activation function to obtain th
 - The Grad-CAM visualization can be superimposed onto the original image, highlighting the regions of the image that are most important for the predicted class. 
 This can help provide insight into how the network is making its predictions and can be useful for interpreting and explaining the decisions made by the neural network.
 
+## Results :
 
 
+<div align="center">
+
+Heatmaps of class activation with a CNN Sequential Model binary classifier overlayed on image files
+<details>
+  <summary>Click to view results</summary>
+
+<div align="center">  
+<table style="margin: 0 auto; border-style: none; width:100%">
+  <tr>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/cat.PNG" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/dog.PNG" width=170></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/2%20cats.PNG" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/test%20images/2%20dogs.PNG" width=170></td>
+  </tr>
+
+  <tr>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/cat_heatmap_overlayed.png" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/dog_heatmap_overlayed.png" width=170></td>  
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/2%20cats_heatmap_overlayed.png" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/2%20dogs_heatmap_overlayed.png" width=170></td>
+  </tr>
 
 
+  
+</table>
+</div>
+</div>
+
+</details>
+
+<div align="center">
+Heatmaps of class activation with a CNN Sequential Model binary classifier overlayed on video files
+<details>
+  <summary>Click to view results</summary>
+  
+<div align="center">  
+<table style="margin: 0 auto; border-style: none; width:100%">
+  <tr>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20cat%20video%202.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20cat%20video.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20dog%20video%202.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20dog%20video.gif" width=140></td>
+  </tr>
+
+  <tr>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/cat_2_heatmap.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/cat_3_heatmap.gif" width=140></td> 
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/dog_4_heatmap.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/dog_1_heatmap.gif" width=140></td>
+    
+  </tr>
+  
+</table>
+</div>
+</div>
+
+</details>
+
+<div align="center">
+Heatmaps of class activation with a multi-class MoblinetV2 classifier overlayed on video files
+
+<details>
+  <summary>Click to view results</summary>
+  
+
+
+<div align="center">  
+<table style="margin: 0 auto; border-style: none; width:100%">
+  <tr>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20cat%20video%202.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20cat%20video.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20dog%20video%202.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/unprocessed%20gifs/input%20dog%20video.gif" width=140></td>
+  </tr>
+
+  <tr>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/mnet_cat_2_heatmap.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/mnet_cat_3_heatmap.gif" width=140></td> 
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/mnet_dog_4_heatmap.gif" width=140></td>
+    <td><img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20heatmaps%20of%20class%20activation%20in%20an%20image/results/gifs/mnet_dog_1_heatmap.gif" width=140></td>
+    
+  </tr>
+  
+</table>
+</div>
+</div>
+
+</details>
