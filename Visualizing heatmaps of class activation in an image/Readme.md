@@ -11,16 +11,19 @@
 
 </p>
 
-Grad-CAM (Gradient-weighted Class Activation Mapping) is a popular technique for visualizing the regions of an image that are important for a neural network's prediction.
+**What is GradCAM** ?
+- Grad-CAM (Gradient-weighted Class Activation Mapping) is a popular technique for visualizing the regions of an image that are important for a neural network's prediction.
 It is a technique that uses the gradient of a target class to produce a coarse localization map highlighting the important regions in the input image for predicting 
 that class.
 
-The basic idea behind Grad-CAM is to take the output feature maps of the last convolutional layer in the network
+**How does GradCAM work** ?  
+- The basic idea behind Grad-CAM is to take the output feature maps of the last convolutional layer in the network
 and weigh them by the gradients of the target class with respect to the feature maps. 
 This produces a weighted sum of the feature maps, where each feature map is weighted by the importance of its activations for predicting the target class. 
 This weighted sum is then passed through a ReLU activation function to obtain the final Grad-CAM visualization.
 
-The Grad-CAM visualization can be superimposed onto the original image, highlighting the regions of the image that are most important for the predicted class. 
+**How does GradCAM help interpret Convolutional Neural Network Decisions** ?  
+- The Grad-CAM visualization can be superimposed onto the original image, highlighting the regions of the image that are most important for the predicted class. 
 This can help provide insight into how the network is making its predictions and can be useful for interpreting and explaining the decisions made by the neural network.
 
 
