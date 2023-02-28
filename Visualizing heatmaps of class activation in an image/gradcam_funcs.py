@@ -1,6 +1,16 @@
 
 # testing and visualizing CNN model predictions
 def test_CNN_model(CNN_model= None, test_imgs_path = '', labels = []):
+    """
+    Test and visualize CNN model predictions on a set of test images.
+    Args:
+    CNN_model (keras model): CNN model to be tested.
+    test_imgs_path (string): Path to the directory containing the test images.
+    labels (list): List of labels corresponding to the classes of the model.
+
+    Returns:
+    pre_processed_imgs (list): List of pre-processed test images.
+    """
     pre_processed_imgs = []
     ncols = len(os.listdir(test_imgs_path))
     fig = plt.figure(figsize=(8, 5))
@@ -28,12 +38,29 @@ def test_CNN_model(CNN_model= None, test_imgs_path = '', labels = []):
 
 
 def preprocess_img(img : np.ndarray , size = (128,128)):
+    """
+    Preprocesses an image by resizing it and scaling its pixel values to [0, 1].
+    Args:
+    img (numpy.ndarray): An image as a numpy array.
+    size (tuple): A tuple specifying the desired size of the image.
+
+    Returns:
+    img (numpy.ndarray): A preprocessed image as a numpy array.
+    """
     img = cv2.resize(img, size)
     img = img / 255
     img = np.expand_dims(img, axis = 0)
     return img
 
 def extract_last_conv_layer(model):
+    """
+    Extracts the name of the last convolutional layer in a Keras model.
+    Args:
+    model (keras model): A Keras model.
+
+    Returns:
+    layer.name (string): The name of the last convolutional layer in the model.
+    """
     for layer in reversed(model.layers):
         if len(layer.output_shape) == 4:
             #print(layer.output_shape)
@@ -41,7 +68,23 @@ def extract_last_conv_layer(model):
 
 def generate_heatmap(img : np.ndarray, model = None, activations_layer ='auto', 
                      class_id = 1 , cmap = cv2.COLORMAP_HOT):
+    """
+    Generates a heatmap visualization for an image using a trained convolutional neural network (CNN).
 
+    Args:
+    img (numpy.ndarray): An image as a numpy array.
+    model (keras model): A trained CNN model.
+    activations_layer (string): The name of the activations layer in the CNN model.
+                                If set to 'auto', the last convolutional layer of the model will be used.
+                                Defaults to 'auto'.
+    class_id (int): The class ID of the prediction for which to generate the heatmap.
+                    Defaults to 1.
+    cmap (cv2 Colormap): The colormap used to generate the heatmap.
+                         Defaults to cv2.COLORMAP_HOT.
+
+    Returns:
+    heatmap (numpy.ndarray): The heatmap as a numpy array with the same dimensions as the input image.
+    """
     if activations_layer == 'auto':
         layer_name = extract_last_conv_layer(model)
         last_conv_layer = model.get_layer(layer_name)
@@ -90,6 +133,18 @@ def generate_heatmap(img : np.ndarray, model = None, activations_layer ='auto',
     return heatmap
 
 def overlay_heatmap(heatmap : np.ndarray , img: np.ndarray, alpha = 0.5 , beta = 0.7):
+    """
+    Overlays the heatmap on top of the original image and returns the result as a new image.
+
+    Args:
+    heatmap (numpy.ndarray): The heatmap as a numpy array with the same dimensions as the input image.
+    img (numpy.ndarray): An image as a numpy array.
+    alpha (float): The weight of the original image. Defaults to 0.5.
+    beta (float): The weight of the heatmap. Defaults to 0.7.
+
+    Returns:
+    output (numpy.ndarray): The resulting image with the heatmap overlaid on top of the original image.
+    """
     heatmap = cv2.resize(heatmap, (img.shape[1],img.shape[0]))
     output = cv2.addWeighted(img, alpha , heatmap, beta, 0)
     #output = cv2.cvtColor(output, cv2.COLOR_BGR2RGB)
@@ -104,7 +159,34 @@ def video_heatmap_overlay(video_file , save_file,
                         class_id = 10,
                         cmap = cv2.COLORMAP_JET,
                         alpha = 0.5 , beta = 0.7) :
+    """
+    Overlay a heatmap onto a video and save it to a file.
 
+    Parameters:
+    -----------
+    video_file : str
+        The file path of the input video to be processed.
+    save_file : str
+        The file path to save the output processed video.
+    model : tf.keras.Model
+        The pre-trained model used for generating the heatmap.
+    activations_layer : str, optional
+        The name of the layer to extract the activation values from. Default is 'auto'.
+    preprocess_size : tuple of ints, optional
+        The dimensions to resize the input frames to before processing. Default is (128, 128).
+    class_id : int, optional
+        The class ID to generate the heatmap for. Default is 10.
+    cmap : cv2.COLORMAP_*, optional
+        The colormap to apply to the heatmap. Default is cv2.COLORMAP_JET.
+    alpha : float, optional
+        The weight factor of the original frame when overlaying the heatmap. Default is 0.5.
+    beta : float, optional
+        The weight factor of the heatmap when overlaying it onto the original frame. Default is 0.7.
+
+    Returns:
+    --------
+    None
+    """
     cap = cv2.VideoCapture(video_file)
 
     width  = int(cap.get(3) )  # get `width` 
@@ -155,6 +237,24 @@ def video_heatmap_overlay(video_file , save_file,
     out.release()
 
 def GIF_from_vid(vid_file, gif_file, fps = 20, skip = 2):
+    """
+    Create a GIF file from a video file.
+
+    Parameters
+    ----------
+    vid_file : str
+        The path to the input video file.
+    gif_file : str
+        The path to the output GIF file.
+    fps : int, optional
+        The number of frames per second of the output GIF. Default is 20.
+    skip : int, optional
+        The number of frames to skip for each frame added to the GIF. Default is 2.
+
+    Returns
+    -------
+    None
+"""
     i = 0
 
     cap = cv2.VideoCapture(vid_file)
@@ -188,14 +288,3 @@ def GIF_from_vid(vid_file, gif_file, fps = 20, skip = 2):
     writer.close()
     cap.release()
 
-gifs_dir ='/content/gifs'
-if not os.path.exists(gifs_dir):
-    os.mkdir(gifs_dir)
-    print(f"Directory '{gifs_dir}' created!")
-
-for filename in os.listdir(results_path):
-    if filename.endswith(".avi"):
-        vid_file = os.path.join(results_path, filename)
-        gif_file = os.path.join(gifs_dir,filename[:-4] + ".gif")
-        
-        GIF_from_vid(vid_file, gif_file, fps = 20, skip = 2)
