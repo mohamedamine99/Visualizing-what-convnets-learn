@@ -1,5 +1,9 @@
 # Visualizing Filters of a CNN
 
+<p align="center">
+    <img src="https://github.com/mohamedamine99/Visualizing-what-convnets-learn/blob/main/Visualizing%20Filters%20of%20a%20CNN/cnn%20filters%20sample.PNG" width=470></td>
+</p>
+
 This repository provides an in-depth exploration of Convolutional Neural Networks (CNNs) by focusing on the visualization of filters. CNNs are powerful deep learning models commonly used for image recognition tasks, and understanding how they learn and extract features from images is crucial for their effective utilization.
 
 ## Introduction
